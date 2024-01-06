@@ -8,9 +8,9 @@
 <main>
 <div class="nav">
   <ul>
-    <li class="title"><button on:click={()=>goto("login")} class="home">Global Exellence</button></li>
+    <li class="title"><button on:click={()=>location.reload()} class="home">Global Exellence</button></li>
     <div>
-      <li><a href="#">About</a></li>
+      <li><a href={"#"}>About</a></li>
       <li><a href="#cards">Rankings</a></li>
     </div>
   </ul>

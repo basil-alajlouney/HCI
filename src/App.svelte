@@ -1,18 +1,17 @@
 <script lang="ts">
-  import { goto } from "./lib/helpers/commons";
   import Admin from "./lib/routes/admin.svelte";
   import Guest from "./lib/routes/guest.svelte";
   import Login from "./lib/routes/login.svelte";
-
-  let endpoint:string = location.href.split("/").at(-1)!;
+  let place = "login";
 </script>
 
-{#if endpoint === "login"}
-  <Login/>
-  {:else if endpoint === "admin"}
+{#if place === "login"}
+  <Login
+  on:guest={()=>place="guest"}
+  on:login={()=>place="admin"}
+  />
+{:else if place === "admin"}
   <Admin/>
-  {:else if endpoint === "guest"}
+{:else if place === "guest"}
   <Guest/>
-  {:else}
-    {goto("login")}
 {/if}

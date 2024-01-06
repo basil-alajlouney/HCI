@@ -3,18 +3,20 @@
   import login_assets_2 from '/login_assets_2.svg';
   import Button3D from "../components/btn.svelte";
   import AnimatedTextInput from "../components/animated_text_input.svelte";
-  import { goto } from "../helpers/commons";
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
 
   let loginInit = (e:MouseEvent)=>{
     e.preventDefault();
     if(username === "admin"
     && password === "admin")
-      goto("admin");
+    dispatch("login");
   }
 
   let guestInit = (e:MouseEvent)=>{
     e.preventDefault();
-    goto("guest");
+    dispatch("guest");
   }
 
   let username:string;
