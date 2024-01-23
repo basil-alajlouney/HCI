@@ -15,8 +15,8 @@
     </div>
   </ul>
 </div>
-<div class="head-background">
-  <h1 class="text-3xl">
+<div class="head-background brightness-50">
+  <h1 class="text-3xl leading-[4rem]">
     Global Excellence Initiative:Elevating University Rankings and Expertise
   </h1>
 </div>
@@ -77,7 +77,7 @@ h1 {
 }
 .head-background {
   position: relative;
-  height: 80vh;
+  height: 93.51vh;
   margin-bottom: 80px;
   padding-top: 100px;
   background-image: url("/Assets/back.jpg");

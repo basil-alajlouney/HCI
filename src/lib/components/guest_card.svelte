@@ -68,7 +68,8 @@
     </div>
   {:else}
     <div transition:slide={{axis:"x",duration:200}} on:click={()=>view = !view} class="w-72 h-96 my-4 border-solid rounded-xl border-2 border-black
-      flex justify-center items-center p-6">
+      flex justify-center items-center p-6
+      hover:shadow-lg shadow-inner shadow-white cursor-pointer">
       <img src={faceSrc} alt={faceAlt}>
     </div>
   {/if}

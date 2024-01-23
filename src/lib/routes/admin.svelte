@@ -3,7 +3,7 @@
   import THE from "/THE.png";
   import QS from "/QS.png";
   import SHANGHAI from "/shanghai.png";
-  import Form from "../components/form.svelte";
+  // import Form from "../components/form.svelte";
 
   let cards = [
       {
@@ -24,19 +24,19 @@
     
   ];
 
-  let newRankinit = ({detail}:{detail:any})=>{
-    const {context1, context2, files} = detail;
-    cards.push({
-      faceSrc:URL.createObjectURL(files[0]),
-      faceAlt:context1,
-      bg:`from-[${context2}]`,
-    })
+  // let newRankinit = ({detail}:{detail:any})=>{
+  //   const {context1, context2, files} = detail;
+  //   cards.push({
+  //     faceSrc:URL.createObjectURL(files[0]),
+  //     faceAlt:context1,
+  //     bg:`from-[${context2}]`,
+  //   })
 
-    cards = cards;
-    newRank = false;
-  }
+  //   cards = cards;
+  //   // newRank = false;
+  // }
 
-  let newRank = false;
+  // let newRank = false;
 
 </script>
 
@@ -54,12 +54,12 @@
   </div>
 
   <div class="min-h-[93%] flex flex-wrap items-center justify-evenly gap-2 p-8">
-    <button on:click={()=>newRank = true} class="rounded-full border-solid border-2 w-12 h-12
+    <!-- <button on:click={()=>newRank = true} class="rounded-full border-solid border-2 w-12 h-12
       border-black absolute right-6 top-16 hover:bg-gray-100">
       <svg class="mx-auto" width="21" height="24" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
         <path fill="#000000" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32"/>
       </svg>
-    </button>
+    </button> -->
     {#each cards as {bg, faceAlt, faceSrc}}
       <Card {faceSrc} {faceAlt} {bg}/>
     {/each}
@@ -67,7 +67,7 @@
 
 </main>
 
-{#if newRank}
+<!-- {#if newRank}
   <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
     bg-white rounded-xl border-solid border-2 border-green-800">
@@ -82,4 +82,4 @@
   
     </div>
   </div>
-{/if}
+{/if} -->

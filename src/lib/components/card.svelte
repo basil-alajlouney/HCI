@@ -33,6 +33,7 @@
       }
       return e;
     })
+
     isEditing = false;
   }
 
@@ -43,6 +44,17 @@
       range:context2,
       value:context1 + context2
     });
+
+    const request:RequestInit={
+      method:"POST",
+      body:JSON.stringify({
+        Ranking:faceAlt,
+        year:context1,
+        rank:context2
+      })
+    };
+    fetch("/card", request);
+
     yearBlocks = yearBlocks;
     newYearBlock = false;
   }
@@ -105,6 +117,7 @@
     bg-white rounded-xl border-solid border-2 border-green-800">
   
     <Form
+      change={false}
       on:cancel={()=>newYearBlock = false}
       on:submit={submitInit}
       />

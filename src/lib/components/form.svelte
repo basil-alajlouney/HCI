@@ -6,6 +6,7 @@
   export let label2 = "rank";
   export let hasUpload:boolean = false;
   export let files:FileList | null = null;
+  export let change = true;
   let context1:string;
   let context2:string;
 </script>
@@ -16,8 +17,10 @@
 
   <div class="div">
     <div class="div-group">
+      {#if change}
       <label for={context1}>{label1}</label>
       <input bind:value={context1} type="text" id={context1} name={context1} placeholder={context1} required>
+      {/if}
       <label for={context2}>{label2}</label>
       <input bind:value={context2} type="text" id={context2} name={context2} placeholder={context2} required>
       {#if hasUpload}
